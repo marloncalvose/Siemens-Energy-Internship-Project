@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://maven.jzy3d.org/releases/"
+    }
+}
+
+mainClassName  = 'com.siemens.energy.pg.Main'
+
+dependencies {
+// https://mvnrepository.com/artifact/org.jzy3d/jzy3d-api
+    compile group: 'org.jzy3d', name: 'jzy3d-api', version: '1.0.2'
+    implementation files("src/main/resources/jogamp-fat.jar")
+}
